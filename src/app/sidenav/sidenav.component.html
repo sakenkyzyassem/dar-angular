@@ -1,0 +1,31 @@
+<div class="sidenav-wrapper">
+    <div class="sidenav-header">
+        <img class="sidenav-avatar" src="../../assets/avatar.jpg" alt="avatar" height="84" width="84"/>
+        <h3 class="sidenav-name">Assem</h3>
+    </div>
+    <div class="sidenav-content">
+        <ul *ngIf="navItems">
+            <ng-container *ngFor="let navItem of navItems">
+                <li class="sidenav-item" *ngIf="navItem.enabled">
+                    <a
+                        [href]="navItem.url"
+                        [ngClass]="{'disabled': !navItem.url}"
+                    >
+                        {{navItem.title}}
+                    </a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+
+    <div class="sidenav-footer">
+        <button 
+            type="button"
+            class="sidenav-login"
+            (click)="onLogin()"
+        >
+        Login
+        </button>
+    </div>
+</div>
+
