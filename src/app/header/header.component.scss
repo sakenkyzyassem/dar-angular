@@ -8,6 +8,15 @@ $white: #f8f8f8;
     font-size: 18px;
     padding: 0.5rem 1.2rem;
     background-color: $secondary;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    align-self: center;
 }
 
 .nav-wrapper {

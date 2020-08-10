@@ -1,10 +1,11 @@
 <div class="header">
+    <app-logo class="header-logo" [favicon]="logo"></app-logo>
     <nav>
         <ul class="nav-wrapper" *ngIf="navItems">
             <ng-container *ngFor="let navItem of navItems">
                 <li class="nav-item" *ngIf="navItem.enabled">
                     <a
-                        [href]="navItem.url" 
+                        [routerLink]="navItem.url"
                         [ngClass]="{'disabled': !navItem.url}"
                     >
                         {{ navItem.title }}

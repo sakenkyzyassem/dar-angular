@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NavItem } from '../shared/types';
+import { NavItem, Favicon } from '../shared/types';
 
 @Component({
   selector: 'app-header',
@@ -16,6 +16,11 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  logo: Favicon = {
+    url: '../../assets/favicon.ico',
+    title: 'Assem'
   }
 
   onLoginClick() {
