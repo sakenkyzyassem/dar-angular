@@ -1,5 +1,30 @@
-<ng-container *ngIf="user">
-    <h1>{{ user.name }}</h1>
-    <h3>Username: {{ user.username }}</h3>
-    <h3>Email: {{ user.email }}</h3>
-</ng-container>
+<div class="user-info">
+    <a [routerLink]="['/users']">&#60; BACK</a>
+    <ng-container *ngIf="user">
+        <h1>{{ user.name }}</h1>
+        <div class="user-into-table">
+            <table>
+                <tr>
+                    <th>Username:</th>
+                    <td>{{ user.username }}</td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Phone:</th>
+                    <td>{{ user.phone }}</td>
+                </tr>
+                <tr>
+                    <th>Website:</th>
+                    <td>{{ user.website }}</td>
+                </tr>
+                <tr>
+                    <th>Company Name:</th>
+                    <td>{{ user.company.name }}</td>
+                </tr>
+            </table>
+        </div>
+    </ng-container>
+</div>

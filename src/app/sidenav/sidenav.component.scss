@@ -5,7 +5,7 @@ $light: #b4d2e7;
 $white: #f8f8f8;
 
 .sidenav-wrapper {
-    height: calc(100vh-30px);
+    height: calc(100vh - 65px);
     background-color: #fff;
     padding: 0 .8rem;
 
@@ -29,25 +29,31 @@ $white: #f8f8f8;
     .sidenav-content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        height: calc(100vh - 125px);
 
         ul{
             list-style: none;
             padding: 0 .4rem;
 
             .sidenav-item {
-                padding: .2rem 0;
-                font-size: 1.2rem;
+                padding: .2rem .4rem;
+                line-height: 30px;
+                font-size: 1.3rem;
                 color: $primary;
                 font-weight: 500;
 
                 a {
                     text-decoration: none;
-                    color: $black;
+                    color: rgba(0,0,0,.87);
+                    transition-duration: 300ms;
 
                     &.disabled {
                         color: gray;
                         pointer-events: none;
+                    }
+
+                    &:hover {
+                        padding-left: .4rem;
                     }
                 }
             }
@@ -56,6 +62,7 @@ $white: #f8f8f8;
 
     .sidenav-footer {
         display: block;
+        bottom: 0rem;
 
         button {
             width: 100%;
@@ -66,6 +73,16 @@ $white: #f8f8f8;
             background-color: $secondary;
             color: $white;
             cursor: pointer;
+
+            -webkit-box-shadow: 0px 2px 30px 0px rgba(206,220,222,1);
+            -moz-box-shadow: 0px 2px 30px 0px rgba(206,220,222,1);
+            box-shadow: 0px 2px 30px 0px rgba(206,220,222,1);   
+
+            transition-duration: 300ms;
+            
+            &:hover{
+                padding: .8rem;
+            }
         }
     }
 }

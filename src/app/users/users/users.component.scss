@@ -1,17 +1,46 @@
+$black: #000100;
+$primary: #a1a6b4;
+$secondary: #94c5cc;
+$light: #b4d2e7;
+$white: #f8f8f8;
+
 .Users{
     padding: 2rem;
 }
 
 .users-table{
+    overflow-x:auto;
+
     table{
-        width: 100%;
-        background-color: white;
+        min-width: 100%;
         border-collapse: collapse;
     }
 
+    thead{
+        background-color: $secondary;
+        color: #fff;
+        font-size: 1.1rem;
+    }
+
+    tbody{
+        tr{
+            background-color: #fff;
+            font-weight: 400;
+            transition-duration: 300ms;
+
+            &:nth-child(even){
+                background-color: #e6ebfc;
+            }
+
+            &:hover{
+                background-color: #d1d8f0;
+                cursor: pointer;
+            }
+        }
+    }
+
     th, td {
-        text-align: center;
+        text-align: left;
         padding: 0.5rem 1rem;
-        border: 1px solid #efefef;
     }
 }
