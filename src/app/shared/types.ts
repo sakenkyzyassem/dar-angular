@@ -16,6 +16,11 @@ export interface User {
     username: string,
     phone: string,
     website: string,
+    address?: {
+        street: string,
+        suite: string,
+        city: string
+    },
     company: {
         name: string
     } 

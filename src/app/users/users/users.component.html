@@ -10,6 +10,7 @@
                 <th>Phone</th>
                 <th>Company</th>
                 <th>Website</th>
+                <th>Address</th>
             </thead>
             <tbody>
                 <tr *ngFor="let user of users" (click)="navigateToUser(user.id)">
@@ -20,6 +21,7 @@
                     <td>{{ user.phone }}</td>
                     <td>{{ user.company.name }}</td>
                     <td>{{ user.website }}</td>
+                    <td>{{ user.address?.city+ ", St. " + user.address?.street + ", " + user.address?.suite}}</td>
                 </tr>
             </tbody>
         </table>
