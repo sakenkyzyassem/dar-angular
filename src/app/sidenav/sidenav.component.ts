@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavItem } from '../shared/types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +9,7 @@ import { NavItem } from '../shared/types';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,6 @@ export class SidenavComponent implements OnInit {
   navItems: NavItem[] = []
 
   onLogin() {
-    alert('Login');
+    this.router.navigate(['login']);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Favicon } from '../shared/types';
 
 @Component ({
@@ -12,10 +12,7 @@ export class LogoComponent implements OnInit {
     constructor() {}
 
     @Input()
-    favicon: Favicon = {
-        url: '',
-        title: ''
-    }
+    favicon: Favicon;
 
     ngOnInit(): void{}
 

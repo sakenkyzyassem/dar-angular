@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavItem, Favicon } from '../shared/types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,23 +10,22 @@ import { NavItem, Favicon } from '../shared/types';
 export class HeaderComponent implements OnInit {
 
   showLoginButton = true;
-
-  @Input()
-  navItems: NavItem[] = [];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   logo: Favicon = {
     url: '../../assets/favicon.ico',
     title: 'Assem'
   }
 
+  @Input()
+  navItems: NavItem[] = [];
+
+  constructor( private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
   onLoginClick() {
-    alert('Login clicked');
     this.showLoginButton = false;
+    this.router.navigate(['login']);
   }
 
 }

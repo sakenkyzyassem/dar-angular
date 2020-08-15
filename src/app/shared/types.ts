@@ -16,12 +16,16 @@ export interface User {
     username: string,
     phone: string,
     website: string,
-    address?: {
-        street: string,
-        suite: string,
-        city: string
-    },
-    company: {
-        name: string
-    } 
+    address?: Address,
+    company: Company
+}
+
+export interface Address {
+    street: string,
+    suite: string,
+    city: string
+}
+
+export interface Company {
+    name: string
 }
