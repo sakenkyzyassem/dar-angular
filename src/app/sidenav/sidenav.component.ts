@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NavItem } from '../shared/types';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -9,15 +10,26 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  isLoggedIn: boolean;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+    this.authService.isLoggedIn$
+      .subscribe( res => {
+        this.isLoggedIn = res;
+      })
   }
 
   @Input()
   navItems: NavItem[] = []
 
-  onLogin() {
-    this.router.navigate(['login']);
+
+  logoutClick() {
+    this.authService.logout();
+    this.router.navigate(['/auth/login']);
   }
 }

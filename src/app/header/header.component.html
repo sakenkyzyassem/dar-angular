@@ -5,20 +5,27 @@
             <ng-container *ngFor="let navItem of navItems">
                 <li class="nav-item" *ngIf="navItem.enabled">
                     <a
-                        [routerLink]="navItem.url"
+                        [routerLink]="navItem.url" 
                         [ngClass]="{'disabled': !navItem.url}"
                     >
                         {{ navItem.title }}
                     </a>
                 </li>
             </ng-container>
-            <li *ngIf="showLoginButton">
+            <li *ngIf="!isLoggedIn else showLogOut">
                 <button
                     type="button"
                     class="login-button"
-                    (click)="onLoginClick()"
+                    [routerLink]="['/auth/login']"
                 >Login</button>
             </li>
+            <ng-template #showLogOut>
+                <button
+                    type="button"
+                    class="login-button"
+                    (click)="logoutClick()"
+                >Logout</button>
+            </ng-template>
         </ul>
     </nav>
 </div>

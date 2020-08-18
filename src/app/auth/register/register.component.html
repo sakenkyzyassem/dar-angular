@@ -1,0 +1,25 @@
+<div class="register">
+    <div class="register-form">
+        <h1>Register</h1>
+        <form [formGroup]="form">
+            <div *ngIf="errorMessage" class="errorMessage">
+                {{ errorMessage }}
+            </div>
+            <div class="register-input">
+                <input type="username" name="username" placeholder="Username" formControlName="username" />
+                <div class="errorMessage" *ngIf="form.get('username').touched && form.get('username').invalid">
+                    <span *ngIf="form.get('username').errors.required">This field is required</span>
+                    <span *ngIf="form.get('username').errors.email">This should be email format</span>
+                </div>
+            </div>
+            <div class="register-input">
+                <input type="password" name="password" placeholder="Password" formControlName="password" />
+                <div class="errorMessage" *ngIf="form.get('password').touched && form.get('password').invalid">
+                    <span *ngIf="form.get('password').errors.required">This field is required</span>
+                </div>
+            </div>
+            <button type="button" (click)="submitRegister()">Sign up</button>
+            <a [routerLink]="['/auth/login']">Log in</a>
+        </form>
+    </div>
+</div>

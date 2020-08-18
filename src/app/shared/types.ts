@@ -29,3 +29,11 @@ export interface Address {
 export interface Company {
     name: string
 }
+
+export interface AuthInfo {
+    access_token: string
+    expires_in: 3600
+    id_token: string,
+    refresh_token: string
+    token_type: string
+}

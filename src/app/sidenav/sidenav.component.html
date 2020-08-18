@@ -10,7 +10,7 @@
             <ng-container *ngFor="let navItem of navItems">
                 <li class="sidenav-item" *ngIf="navItem.enabled">
                     <a
-                        [href]="navItem.url"
+                        [routerLink]="navItem.url"
                         [ngClass]="{'disabled': !navItem.url}"
                     >
                         {{navItem.title}}
@@ -21,13 +21,19 @@
     </div>
 
     <div class="sidenav-footer">
-        <button 
+        <button
+            *ngIf="!isLoggedIn else showLogOut"
             type="button"
-            class="sidenav-login"
-            (click)="onLogin()"
-        >
-        Login
-        </button>
+            class="login-button"
+            [routerLink]="['/auth/login']"
+        >Login</button>
+        <ng-template #showLogOut>
+            <button
+                type="button"
+                class="login-button"
+                (click)="logoutClick()"
+            >Logout</button>
+        </ng-template>
     </div>
 </div>
 
