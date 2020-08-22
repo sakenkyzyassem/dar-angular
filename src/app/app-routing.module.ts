@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Route[] = [
   {
@@ -11,6 +12,7 @@ const routes: Route[] = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'users',

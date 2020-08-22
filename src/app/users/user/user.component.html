@@ -28,6 +28,7 @@
                     <th>Company Name:</th>
                     <td>{{ user.company | concatFields:'name' }}</td>
                 </tr>
+                <a [routerLink]="['/users/form/', user.id]">Edit</a>
             </table>
         </div>
     </ng-container>

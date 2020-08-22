@@ -27,7 +27,9 @@ export interface Address {
 }
 
 export interface Company {
-    name: string
+    name: string,
+    catchPhrase: string,
+    bs: string,
 }
 
 export interface AuthInfo {
