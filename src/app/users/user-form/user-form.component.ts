@@ -169,7 +169,10 @@ export class UserFormComponent implements OnInit {
   saveChanges() {
 
     if( this.form.status === "VALID" ) {
-      this.user = this.form.getRawValue();
+      let form_val = this.form.getRawValue();
+
+      this.user = form_val;
+      this.user.company.bs = form_val.company.bs.join(' ');
       console.log(this.user);
       this.saveMessage = {
         message: "Changes saved sucessfully",
